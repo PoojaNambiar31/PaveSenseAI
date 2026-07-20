@@ -1,0 +1,29 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# VS Code
+.vscode/
+
+# Uploaded Images
+app/static/uploads/
+
+# Model Weights
+models/*.pt
+models/*.pth
+
+# System Files
+.DS_Store
+Thumbs.db
+

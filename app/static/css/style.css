@@ -1,0 +1,25 @@
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f8f9fa;
+
+}
+
+.navbar{
+
+    padding:18px;
+
+}
+
+.display-3{
+
+    color:#1E3A8A;
+
+}
+
+.btn{
+
+    border-radius:10px;
+
+}

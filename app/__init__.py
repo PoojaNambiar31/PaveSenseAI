@@ -1,5 +1,4 @@
-from flask import Flask
-
+from flask import Flask, render_template
 from config import Config
 
 
@@ -15,6 +14,6 @@ def create_app():
 
     @app.route("/")
     def home():
-        return "<h1>Welcome to PaveSense AI</h1>"
+        return render_template("home/index.html")
 
     return app

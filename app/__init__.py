@@ -1,5 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask
 from config import Config
+
+from app.routes.home import home
+from app.routes.complaint import complaint
 
 
 def create_app():
@@ -12,8 +15,8 @@ def create_app():
 
     app.config.from_object(Config)
 
-    @app.route("/")
-    def home():
-        return render_template("home/index.html")
+    # Register Blueprints
+    app.register_blueprint(home)
+    app.register_blueprint(complaint)
 
     return app

@@ -1,0 +1,95 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Report Road Damage
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="complaint-page py-5">
+
+<div class="container">
+
+
+<!-- Progress -->
+
+<div class="text-center mb-5">
+
+<h2>
+Report Road Damage
+</h2>
+
+<p>
+Step 1 of 6 - Upload Image
+</p>
+
+</div>
+
+
+
+<!-- Upload Card -->
+
+<div class="upload-card">
+
+
+<div class="upload-icon">
+
+📷
+
+</div>
+
+
+<h3>
+Upload Road Image
+</h3>
+
+
+<p>
+Upload an image of the damaged road
+for AI analysis.
+</p>
+
+
+<div class="upload-box">
+
+
+<input type="file" id="roadImage">
+
+
+<label for="roadImage">
+
+Choose Image
+
+</label>
+
+
+<p>
+Supported formats:
+JPG, PNG, JPEG
+</p>
+
+
+</div>
+
+
+
+<a href="{{ url_for('complaint.location') }}"
+class="btn btn-primary mt-4">
+
+Continue
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+{% endblock %}

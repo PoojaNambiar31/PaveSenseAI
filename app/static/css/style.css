@@ -1,25 +1,149 @@
+/* ---------- Google Font ---------- */
+
 body{
 
     font-family:'Poppins',sans-serif;
 
-    background:#f8f9fa;
+    background:#F7F9F9;
+
+    color:#3B4A54;
 
 }
 
+/* ---------- Navbar ---------- */
+
 .navbar{
+
+    background:#4F6D7A !important;
 
     padding:18px;
 
 }
 
-.display-3{
+.navbar-brand{
 
-    color:#1E3A8A;
+    font-weight:700;
+
+    font-size:24px;
 
 }
 
-.btn{
+.nav-link{
 
-    border-radius:10px;
+    color:white !important;
+
+    margin-left:15px;
+
+}
+
+.nav-link:hover{
+
+    color:#F4C95D !important;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero{
+
+    padding:120px 0;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #F7F9F9,
+        #EAF4F4
+    );
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    font-weight:700;
+
+    color:#4F6D7A;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+    margin-top:20px;
+
+    color:#5C6B73;
+
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-primary{
+
+    background:#7FB685;
+
+    border:none;
+
+}
+
+.btn-primary:hover{
+
+    background:#6CA873;
+
+}
+
+.btn-outline-primary{
+
+    color:#4F6D7A;
+
+    border-color:#4F6D7A;
+
+}
+
+.btn-outline-primary:hover{
+
+    background:#4F6D7A;
+
+    color:white;
+
+}
+
+/* ---------- Cards ---------- */
+
+.feature-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    transition:.3s;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.feature-icon{
+
+    font-size:50px;
+
+    color:#8EC5E8;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+    background:#4F6D7A;
 
 }

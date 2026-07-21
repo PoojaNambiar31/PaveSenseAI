@@ -10,54 +10,32 @@ Upload Road Image
 
 <div class="row justify-content-center">
 
-<div class="col-lg-8">
-
-<!-- Progress -->
-
-<div class="mb-5">
-
-<div class="progress" style="height:10px;">
-
-<div
-class="progress-bar bg-success"
-style="width:12%;">
-
-</div>
-
-</div>
-
-<p class="mt-2 text-muted">
-
-Step 1 of 8 • Upload Road Image
-
-</p>
-
-</div>
-
-<!-- Card -->
+<div class="col-lg-9">
 
 <div class="feature-card">
 
-<h2 class="text-center mb-4">
+<div class="text-center mb-5">
 
-📤 Upload Road Damage
+<h2>📤 Upload Road Image</h2>
 
-</h2>
+<p class="text-muted">
 
-<p class="text-center text-muted mb-5">
-
-Upload one or more images of the damaged road.
-Our AI will detect the damage and estimate its severity.
+Upload an image of the damaged road and briefly describe the issue.
+PaveSense AI will use both the image and your description to generate a professional complaint.
 
 </p>
 
+</div>
+
 <form action="{{ url_for('complaint.applicant') }}">
+
+<!-- Upload Image -->
 
 <div class="mb-4">
 
 <label class="form-label">
 
-Road Image
+Road Damage Image
 
 </label>
 
@@ -65,24 +43,143 @@ Road Image
 type="file"
 class="form-control"
 accept="image/*"
-multiple>
+id="imageInput">
 
 </div>
+
+<!-- Preview -->
+
+<div class="text-center mb-5">
+
+<img
+id="preview"
+src="https://placehold.co/700x350?text=Image+Preview"
+class="img-fluid rounded shadow"
+style="max-height:350px;">
+
+</div>
+
+<!-- AI Ready Card -->
+
+<div class="alert alert-info d-flex align-items-center">
+
+<div style="font-size:40px;" class="me-3">
+
+🤖
+
+</div>
+
+<div>
+
+<h5 class="mb-1">
+
+AI Ready to Analyze
+
+</h5>
+
+<small>
+
+Upload an image and describe the issue.
+PaveSense AI will detect road damage, estimate severity,
+identify the authority and generate a complaint.
+
+</small>
+
+</div>
+
+</div>
+
+<!-- Language -->
 
 <div class="mb-4">
 
 <label class="form-label">
 
-Additional Description (Optional)
+Complaint Language
+
+</label>
+
+<select
+class="form-select"
+name="language">
+
+<option selected>
+🌐 Auto Detect
+</option>
+
+<option>
+English
+</option>
+
+<option>
+Malayalam
+</option>
+
+<option>
+Hindi
+</option>
+
+<option>
+Tamil
+</option>
+
+<option>
+Telugu
+</option>
+
+<option>
+Kannada
+</option>
+
+<option>
+Marathi
+</option>
+
+<option>
+Gujarati
+</option>
+
+<option>
+Bengali
+</option>
+
+<option>
+Punjabi
+</option>
+
+<option>
+Odia
+</option>
+
+</select>
+
+<small class="text-muted">
+
+Write the complaint in any language.
+AI will translate it into English automatically.
+
+</small>
+
+</div>
+
+<!-- Description -->
+
+<div class="mb-4">
+
+<label class="form-label">
+
+Describe the Road Issue
 
 </label>
 
 <textarea
 class="form-control"
-rows="5"
-placeholder="Describe the road damage..."></textarea>
+rows="6"
+placeholder="Example: There is a large pothole near the bus stop causing accidents."></textarea>
 
 </div>
+
+<!-- Buttons -->
 
 <div class="d-flex justify-content-between">
 
@@ -90,7 +187,7 @@ placeholder="Describe the road damage..."></textarea>
 href="{{ url_for('dashboard.home') }}"
 class="btn btn-outline-secondary">
 
-← Back
+← Dashboard
 
 </a>
 
@@ -112,5 +209,24 @@ Next →
 </div>
 
 </section>
+
+<script>
+
+const imageInput = document.getElementById("imageInput");
+const preview = document.getElementById("preview");
+
+imageInput.onchange = function(){
+
+    const file = this.files[0];
+
+    if(file){
+
+        preview.src = URL.createObjectURL(file);
+
+    }
+
+}
+
+</script>
 
 {% endblock %}

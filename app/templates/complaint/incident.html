@@ -1,0 +1,117 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Incident Location
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+<div class="col-lg-8 mx-auto">
+
+<div class="progress mb-4">
+
+<div class="progress-bar bg-success"
+style="width:70%;"></div>
+
+</div>
+
+<p class="text-muted">
+
+Step 5 of 8 • Incident Details
+
+</p>
+
+<div class="feature-card">
+
+<h2 class="text-center">
+
+📍 Incident Details
+
+</h2>
+
+<form action="{{ url_for('complaint.analysis') }}">
+
+<div class="mb-3">
+
+<label>
+
+Location
+
+</label>
+
+<div class="d-grid gap-2">
+
+<button
+type="button"
+class="btn btn-outline-success">
+
+📍 Use Current GPS
+
+</button>
+
+<button
+type="button"
+class="btn btn-outline-primary">
+
+🗺 Select on Map
+
+</button>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<label>Date</label>
+
+<input
+type="date"
+class="form-control">
+
+</div>
+
+<div class="col-md-6">
+
+<label>Time</label>
+
+<input
+type="time"
+class="form-control">
+
+</div>
+
+</div>
+
+<div class="mt-5 d-flex justify-content-between">
+
+<a
+href="{{ url_for('complaint.road_details') }}"
+class="btn btn-outline-secondary">
+
+← Previous
+
+</a>
+
+<button
+class="btn btn-success">
+
+Next →
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

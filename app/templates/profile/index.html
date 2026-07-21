@@ -1,0 +1,238 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-9">
+
+<div class="feature-card">
+
+<div class="text-center mb-5">
+
+<img
+src="https://ui-avatars.com/api/?name=Pooja+Nambiar&size=180&background=4F6D7A&color=fff"
+class="rounded-circle shadow">
+
+<h2 class="mt-4">
+My Profile
+</h2>
+
+<p class="text-muted">
+Manage your PaveSense AI account
+</p>
+
+</div>
+
+<form>
+
+<div class="row">
+
+<div class="col-md-6 mb-4">
+
+<label class="form-label">Full Name</label>
+
+<input
+type="text"
+class="form-control"
+value="Pooja Nambiar"
+readonly>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<label class="form-label">Email</label>
+
+<input
+type="email"
+class="form-control"
+value="pooja@gmail.com"
+readonly>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<label class="form-label">Phone Number</label>
+
+<input
+type="text"
+class="form-control"
+placeholder="+91"
+readonly>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<label class="form-label">Country</label>
+
+<input
+type="text"
+class="form-control"
+value="India"
+readonly>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<label class="form-label">State</label>
+
+<input
+type="text"
+class="form-control"
+value="Kerala"
+readonly>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<label class="form-label">District</label>
+
+<input
+type="text"
+class="form-control"
+placeholder="District"
+readonly>
+
+</div>
+
+<div class="col-md-12 mb-4">
+
+<label class="form-label">Address</label>
+
+<textarea
+class="form-control"
+rows="3"
+readonly></textarea>
+
+</div>
+
+</div>
+
+<hr class="my-4">
+
+<h4 class="text-center mb-4">
+Complaint Statistics
+</h4>
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<h2 class="text-success">12</h2>
+
+<p>Total Complaints</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h2 class="text-primary">9</h2>
+
+<p>Resolved</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h2 class="text-warning">3</h2>
+
+<p>Pending</p>
+
+</div>
+
+</div>
+
+<hr class="my-4">
+
+<div class="text-center">
+
+<button
+type="button"
+id="editBtn"
+class="btn btn-primary px-4 me-2">
+
+✏️ Edit Profile
+
+</button>
+
+<button
+type="submit"
+id="saveBtn"
+class="btn btn-success px-4 me-2"
+style="display:none;">
+
+💾 Save Changes
+
+</button>
+
+<button
+type="button"
+id="cancelBtn"
+class="btn btn-secondary px-4 me-2"
+style="display:none;">
+
+Cancel
+
+</button>
+
+<a
+href="{{ url_for('dashboard.home') }}"
+class="btn btn-outline-dark px-4">
+
+← Dashboard
+
+</a>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const editBtn = document.getElementById("editBtn");
+const saveBtn = document.getElementById("saveBtn");
+const cancelBtn = document.getElementById("cancelBtn");
+
+editBtn.onclick = function () {
+
+    document.querySelectorAll("input").forEach(input => {
+        input.removeAttribute("readonly");
+    });
+
+    document.querySelectorAll("textarea").forEach(textarea => {
+        textarea.removeAttribute("readonly");
+    });
+
+    editBtn.style.display = "none";
+    saveBtn.style.display = "inline-block";
+    cancelBtn.style.display = "inline-block";
+}
+
+cancelBtn.onclick = function () {
+
+    location.reload();
+
+}
+
+</script>
+
+{% endblock %}

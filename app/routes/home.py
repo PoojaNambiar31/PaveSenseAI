@@ -5,6 +5,8 @@ home = Blueprint(
     __name__
 )
 
+from flask import redirect, url_for
+
 @home.route("/")
 def index():
-    return render_template("home/index.html")
+    return redirect(url_for("auth.login"))

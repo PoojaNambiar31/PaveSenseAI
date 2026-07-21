@@ -1,0 +1,289 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Dashboard | PaveSense AI
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="container text-center">
+
+<div class="hero-badge">
+
+🚀 AI Powered Road Infrastructure Assistant
+
+</div>
+
+<h1>
+
+Welcome Back 👋
+
+<br>
+
+<span>PaveSense AI Dashboard</span>
+
+</h1>
+
+<p class="mx-auto" style="max-width:850px;">
+
+Detect road damage, estimate its severity, identify the responsible authority,
+generate a professional complaint using AI, submit it to the appropriate
+government portal, and track its progress—all from one intelligent platform.
+
+</p>
+
+<div class="mt-5">
+
+<a href="{{ url_for('complaint.upload') }}"
+class="btn btn-success btn-lg rounded-pill px-5 me-3">
+
+📤 Upload Image
+
+</a>
+
+<a href="#how-it-works"
+class="btn btn-outline-secondary btn-lg rounded-pill px-5">
+
+Learn More
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Quick Actions -->
+
+<section class="container py-5">
+
+<h2 class="text-center mb-5">
+
+Quick Actions
+
+</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+
+📤
+
+</div>
+
+<h4>
+
+Report Road
+
+</h4>
+
+<p>
+
+Upload road damage for AI analysis.
+
+</p>
+
+<a href="{{ url_for('complaint.upload') }}"
+class="btn btn-primary">
+
+Open
+
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+
+📍
+
+</div>
+
+<h4>
+
+Track Complaint
+
+</h4>
+
+<p>
+
+Check complaint status.
+
+</p>
+
+<a href="#"
+class="btn btn-primary">
+
+Track
+
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="feature-card text-center">
+
+<div class="feature-icon">
+
+📜
+
+</div>
+
+<h4>
+
+History
+
+</h4>
+
+<p>
+
+View previous complaints.
+
+</p>
+
+<a href="#"
+class="btn btn-primary">
+
+History
+
+</a>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+    <div class="feature-card text-center">
+
+        <div class="feature-icon">
+            👤
+        </div>
+
+        <h4>
+            Profile
+        </h4>
+
+        <p>
+            Manage and edit your profile information.
+        </p>
+
+        <a href="{{ url_for('profile.home') }}"
+           class="btn btn-primary">
+
+            Open Profile
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- How It Works -->
+
+<section id="how-it-works" class="container py-5">
+
+<h2 class="text-center mb-5">
+
+How PaveSense AI Works
+
+</h2>
+
+<div class="row text-center g-4">
+
+<div class="col-md-2">
+
+<div class="feature-card">
+
+<h1>1️⃣</h1>
+
+<h5>Upload</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-2">
+
+<div class="feature-card">
+
+<h1>2️⃣</h1>
+
+<h5>AI Detects</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-2">
+
+<div class="feature-card">
+
+<h1>3️⃣</h1>
+
+<h5>Severity</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-2">
+
+<div class="feature-card">
+
+<h1>4️⃣</h1>
+
+<h5>Authority</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-2">
+
+<div class="feature-card">
+
+<h1>5️⃣</h1>
+
+<h5>Complaint</h5>
+
+</div>
+
+</div>
+
+<div class="col-md-2">
+
+<div class="feature-card">
+
+<h1>6️⃣</h1>
+
+<h5>Submitted</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+AI Analysis
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5 text-center">
+
+<h1>
+
+🤖 AI is analysing your complaint...
+
+</h1>
+
+<div class="spinner-border text-success mt-5"
+style="width:80px;height:80px;">
+
+</div>
+
+<div class="mt-5">
+
+<div class="progress">
+
+<div
+id="bar"
+class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+style="width:0%">
+
+</div>
+
+</div>
+
+</div>
+
+<p id="status"
+class="mt-4">
+
+Initializing AI...
+
+</p>
+
+</section>
+
+<script>
+
+const msgs=[
+
+"Detecting road damage...",
+
+"Estimating severity...",
+
+"Finding responsible authority...",
+
+"Generating complaint...",
+
+"Preparing report..."
+
+];
+
+let i=0;
+
+let p=0;
+
+let timer=setInterval(()=>{
+
+p+=20;
+
+document.getElementById("bar").style.width=p+"%";
+
+document.getElementById("status").innerHTML=msgs[i];
+
+i++;
+
+if(p>=100){
+
+clearInterval(timer);
+
+window.location="{{ url_for('complaint.preview') }}";
+
+}
+
+},1500);
+
+</script>
+
+{% endblock %}

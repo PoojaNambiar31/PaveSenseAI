@@ -1,0 +1,146 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Login | PaveSense AI
+{% endblock %}
+
+{% block content %}
+
+<section class="login-section">
+
+<div class="container">
+
+<div class="row login-wrapper shadow-lg">
+
+<!-- LEFT SIDE -->
+
+<div class="col-lg-6 login-left">
+
+<div>
+
+<h1>PaveSense AI</h1>
+
+<p class="tagline">
+
+Making Roads Safer with Artificial Intelligence
+
+</p>
+
+<div class="illustration">
+
+🚧🛣️🤖
+
+</div>
+
+<p class="small-text">
+
+Detect road damage • Generate complaints •
+Track submissions • Help improve roads.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="col-lg-6 login-right">
+
+<div class="login-card">
+
+<h2>Welcome Back 👋</h2>
+
+<p class="text-muted">
+
+Login to continue
+
+</p>
+
+<button class="google-btn">
+
+<img src="https://www.svgrepo.com/show/475656/google-color.svg" width="22">
+
+Continue with Google
+
+</button>
+
+<div class="divider">
+
+<span>OR</span>
+
+</div>
+
+<form action="{{ url_for('dashboard.home') }}" method="GET">
+
+<div class="mb-3">
+
+<label>Email</label>
+
+<input
+type="email"
+class="form-control"
+placeholder="Enter your email">
+
+</div>
+
+<div class="mb-3">
+
+<label>Password</label>
+
+<input
+type="password"
+class="form-control"
+placeholder="Enter password">
+
+</div>
+
+<div class="d-flex justify-content-between mb-4">
+
+<div>
+
+<input type="checkbox">
+
+Remember me
+
+</div>
+
+<a href="#">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+<button class="btn login-btn w-100">
+
+Login
+
+</button>
+
+</form>
+
+<div class="text-center mt-4">
+
+Don't have an account?
+
+<a href="{{ url_for('auth.register') }}">
+
+Register
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

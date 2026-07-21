@@ -1,0 +1,175 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Address Details
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-8">
+
+<div class="mb-5">
+
+<div class="progress" style="height:10px;">
+
+<div class="progress-bar bg-success" style="width:40%;"></div>
+
+</div>
+
+<p class="mt-2 text-muted">
+
+Step 3 of 8 • Address Details
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h2 class="text-center mb-5">
+
+🏠 Address Details
+
+</h2>
+
+<form action="{{ url_for('complaint.road_details') }}" method="GET">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Country</label>
+
+<input type="text" class="form-control" value="India" readonly>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>State</label>
+
+<select class="form-select">
+
+<option>Kerala</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>District</label>
+
+<select class="form-select">
+
+<option>Select District</option>
+
+<option>Thiruvananthapuram</option>
+<option>Kollam</option>
+<option>Pathanamthitta</option>
+<option>Alappuzha</option>
+<option>Kottayam</option>
+<option>Idukki</option>
+<option>Ernakulam</option>
+<option>Thrissur</option>
+<option>Palakkad</option>
+<option>Malappuram</option>
+<option>Kozhikode</option>
+<option>Wayanad</option>
+<option>Kannur</option>
+<option>Kasaragod</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Local Body Type</label>
+
+<select class="form-select">
+
+<option>Corporation</option>
+
+<option>Municipality</option>
+
+<option>Grama Panchayat</option>
+
+</select>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Local Body Name</label>
+
+<input type="text" class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Ward Number</label>
+
+<input type="text" class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>House Number</label>
+
+<input type="text" class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Post Office</label>
+
+<input type="text" class="form-control">
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<label>PIN Code</label>
+
+<input type="text" class="form-control">
+
+</div>
+
+</div>
+
+<div class="d-flex justify-content-between">
+
+<a href="{{ url_for('complaint.applicant') }}"
+class="btn btn-outline-secondary">
+
+← Previous
+
+</a>
+
+<button class="btn btn-success px-5">
+
+Next →
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

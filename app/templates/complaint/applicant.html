@@ -1,7 +1,7 @@
 {% extends "layout/base.html" %}
 
 {% block title %}
-Upload Road Image
+Applicant Details
 {% endblock %}
 
 {% block content %}
@@ -12,15 +12,13 @@ Upload Road Image
 
 <div class="col-lg-8">
 
-<!-- Progress -->
-
 <div class="mb-5">
 
 <div class="progress" style="height:10px;">
 
 <div
 class="progress-bar bg-success"
-style="width:12%;">
+style="width:25%;">
 
 </div>
 
@@ -28,69 +26,106 @@ style="width:12%;">
 
 <p class="mt-2 text-muted">
 
-Step 1 of 8 • Upload Road Image
+Step 2 of 8 • Applicant Details
 
 </p>
 
 </div>
 
-<!-- Card -->
-
 <div class="feature-card">
 
-<h2 class="text-center mb-4">
+<h2 class="text-center mb-5">
 
-📤 Upload Road Damage
+👤 Applicant Details
 
 </h2>
 
-<p class="text-center text-muted mb-5">
+<form action="{{ url_for('complaint.address') }}">
 
-Upload one or more images of the damaged road.
-Our AI will detect the damage and estimate its severity.
+<div class="mb-3">
 
-</p>
+<label>
 
-<form action="{{ url_for('complaint.applicant') }}">
-
-<div class="mb-4">
-
-<label class="form-label">
-
-Road Image
+Full Name
 
 </label>
 
 <input
-type="file"
+type="text"
 class="form-control"
-accept="image/*"
-multiple>
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Email Address
+
+</label>
+
+<input
+type="email"
+class="form-control"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Phone Number
+
+</label>
+
+<input
+type="text"
+class="form-control"
+required>
 
 </div>
 
 <div class="mb-4">
 
-<label class="form-label">
+<label>
 
-Additional Description (Optional)
+Applying For
 
 </label>
 
-<textarea
-class="form-control"
-rows="5"
-placeholder="Describe the road damage..."></textarea>
+<select class="form-select">
+
+<option>
+
+Self
+
+</option>
+
+<option>
+
+Someone Else
+
+</option>
+
+<option>
+
+Joint Petition
+
+</option>
+
+</select>
 
 </div>
 
 <div class="d-flex justify-content-between">
 
 <a
-href="{{ url_for('dashboard.home') }}"
+href="{{ url_for('complaint.upload') }}"
 class="btn btn-outline-secondary">
 
-← Back
+← Previous
 
 </a>
 

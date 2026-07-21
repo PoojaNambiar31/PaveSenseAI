@@ -1,0 +1,96 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Complaint Preview
+{% endblock %}
+
+{% block content %}
+
+<section class="container py-5">
+
+<div class="col-lg-10 mx-auto">
+
+<div class="progress mb-4">
+<div class="progress-bar bg-success" style="width:90%;"></div>
+</div>
+
+<p class="text-muted">
+Step 7 of 8 • Complaint Preview
+</p>
+
+<div class="feature-card">
+
+<h2 class="text-center mb-4">
+📄 AI Generated Complaint
+</h2>
+
+<div class="alert alert-success">
+
+<strong>Severity Analysis:</strong><br>
+
+Severity : <strong>HIGH</strong><br>
+Confidence : <strong>96%</strong><br>
+Damage : Large Pothole
+
+</div>
+
+<div class="border rounded p-4 bg-light">
+
+<pre style="white-space:pre-wrap;font-family:Poppins;">
+
+To,
+The Executive Engineer
+
+Subject: Complaint regarding severe road damage.
+
+Respected Sir/Madam,
+
+I would like to report a severely damaged road that requires immediate attention.
+
+The uploaded image has been analysed by PaveSense AI.
+
+Analysis Result
+
+• Damage Type : Pothole
+• Severity : High
+• Estimated Risk : Dangerous
+
+The location and applicant details have been attached with this complaint.
+
+Kindly arrange immediate maintenance to avoid accidents.
+
+Thank You.
+
+Regards,
+
+Applicant Name
+
+</pre>
+
+</div>
+
+<div class="mt-4 d-flex justify-content-between">
+
+<a href="{{ url_for('complaint.analysis') }}"
+class="btn btn-outline-secondary">
+
+← Generate Again
+
+</a>
+
+<a href="{{ url_for('complaint.submit') }}"
+class="btn btn-success">
+
+Accept & Submit →
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
